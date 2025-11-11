@@ -1,1 +1,15 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f6f6f8;
+  --color-accent: #673dff;
+
+  --font-sans: "system-ui", sans-serif;
+
+}
+
+@layer base {
+  html {
+    @apply bg-background font-sans p-4;
+  }
+}
