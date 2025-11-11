@@ -4,8 +4,13 @@ export default function MySchedule() {
   const { sessionIds, remove } = useSchedule()
 
   const sessions = SESSIONS.filter((session) => sessionIds.includes(session.id))
+  .sort((a, b) => new Date(a.startsAt) - new Date(b.startsAt)) // sorty by startig time
+  
   if (sessions.length === 0) {
-    return <p className="text-center col-span-3 mt-6">No sessions in your schedule yet.</p>
+    return (
+      <p className="text-center text-gray-400 mt-6">
+        No sessions in your schedule yet.</p>
+    )
   }
 
   const formatDateTime = (date) =>
@@ -13,6 +18,8 @@ export default function MySchedule() {
       dateStyle: "medium",
       timeStyle: "short",
     })
+
+  // TODO: adaptar card a vista pantallas pequeñas
   return (
     <>
       {sessions.map((session) => (
