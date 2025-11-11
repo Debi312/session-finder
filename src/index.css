@@ -3,6 +3,7 @@
 @theme {
   --color-background: #f6f6f8;
   --color-accent: #673dff;
+  --color-border: #d1d5dc;
 
   --font-sans: "system-ui", sans-serif;
 
@@ -10,6 +11,6 @@
 
 @layer base {
   html {
-    @apply bg-background font-sans p-4;
+    @apply bg-background font-sans p-8;
   }
 }
