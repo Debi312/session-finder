@@ -8,7 +8,7 @@ export default function MySchedule() {
   
   if (sessions.length === 0) {
     return (
-      <p className="text-center text-gray-400 mt-6">
+      <p className="text-center text-gray-400  mt-6">
         No sessions in your schedule yet.</p>
     )
   }
@@ -20,10 +20,11 @@ export default function MySchedule() {
     })
 
   // TODO: adaptar card a vista pantallas pequeñas
+  //TODO: componetizar session card
   return (
     <>
       {sessions.map((session) => (
-        <article key={session.id} className="flex flex-row justify-between items-center border border-border rounded-lg p-6 mt-4 bg-white">
+        <article key={session.id} className="flex lg:flex-row flex-col justify-between lg:items-center border border-border gap-3 rounded-lg p-6 mt-4 bg-white">
           <h2 className="text-lg font-bold mb-2">{session.title}</h2>
 
           <p className="text-sm text-accent">{session.track}</p>

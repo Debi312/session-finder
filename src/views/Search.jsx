@@ -41,7 +41,7 @@ export default function Search() {
                 <label htmlFor="search" className="sr-only">Search</label>
 
                 <input
-                    className="w-full border border-border p-2 rounded-lg placeholder:text-gray-400"
+                    className="w-full border border-border p-2 rounded-lg placeholder:text-gray-400 focus:outline-none focus:border-2 focus:border-accent"
                     type="text"
                     onChange={(e) => setSearchTerm(e.target.value)}
                     value={searchTerm}
@@ -51,20 +51,20 @@ export default function Search() {
 
             <main className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
                 {loading && (
-                    <p className="text-center ">Loading...</p>
+                    <p className=" col-span-3 ">Loading...</p>
                 )}
                 {!loading && results.length === 0 && (
-                    <p className="text-center  text-gray-400">
+                    <p className=" col-span-3 text-gray-400">
                         No sessions found matching this search.
                     </p>
                 )}
                 {error && (
-                    <p className="text-center  text-red-500">{error}</p>
+                    <p className="col-span-3 text-red-500">{error}</p>
                 )}
                 {!loading && results.length > 0 &&
                     (results.map(session => (
 
-                        <article key={session.id} className="border border-border rounded-lg p-6 mt-4 bg-white">
+                        <article key={session.id} className="border border-border rounded-lg p-6 mt-4 bg-white transition-all duration-200 ease-in hover:shadow-md hover:-translate-y-2">
                             <p className="text-sm text-accent">{session.track}</p>
                             <h2 className="text-lg font-bold mb-2">{session.title}</h2>
                             <div className="flex flex-col gap-1">

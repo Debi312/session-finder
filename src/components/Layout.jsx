@@ -4,6 +4,7 @@ export default function Layout() {
     const { sessionIds } = useSchedule();
 
     //TODO : añadir logo y mejorar estilos
+    //TODO: mejorar responsive navbar
     return (
         <>
             <header className="flex flex-row justify-between items-center mb-8 ">
